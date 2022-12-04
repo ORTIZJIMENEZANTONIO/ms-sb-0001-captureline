@@ -6,6 +6,7 @@ import { WinstonModule } from 'nest-winston';
 import * as winston from 'winston';
 import * as path from 'path';
 import { configService } from './shared/config/config.service';
+import { PkComerLcModule } from './modules/pk-comer-lc/pk-comer-lc.module';
 
 @Module({
   imports: [
@@ -40,6 +41,7 @@ import { configService } from './shared/config/config.service';
         new winston.transports.Console({ level: 'debug' }),
       ],
     }),
+    PkComerLcModule,
   ],
   controllers: [AppController],
   providers: [AppService],
